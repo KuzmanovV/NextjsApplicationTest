@@ -3,7 +3,9 @@ import { SectionContainer, SectionBigHeading, SectionSubheading } from "~/compon
 import { Card } from "~/collections";
 
 export const StyledContainer = styled(({ height, ...props }) => <SectionContainer {...props} />)`
-  align-items: center;
+display: flex;
+flex-direction: column;
+align-items: center;
 `;
 
 
@@ -17,7 +19,7 @@ margin: 1.563rem 0 0;
 `;
 
 export const StyledCard = styled((props) => <Card {...props} />)`
-margin: 1.563rem 0 0;
+height: 25vh;
 `;
 
 export const StyledTextContainer = styled(({ ...props }) => <div {...props} />)`
@@ -27,9 +29,14 @@ margin-left: 11.125rem;
 font-family: sans-serif;
 `;
 
+export const StyledSubContainer = styled(({ ...props }) => <div {...props} />)`
+display: flex;
+`;
+
 export const StyledCTAContainer = styled(({ ...props }) => <div {...props} />)`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 `;
 
 // export const StyledGetStartedBtn = styled((props) => <Button {...props} variant="outlined" color="main" />)`
@@ -43,5 +50,4 @@ max-width: 22.03rem;
 max-height: 65rem;
 width: 100%;
 height: 100%;
-// margin-left: auto;
 `;
