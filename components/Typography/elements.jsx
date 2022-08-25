@@ -43,3 +43,16 @@ export const StyledSectionParagraph = styled((props) => <p {...props} />)`
   line-height: 1.5rem;
   font-weight: 400;
 `;
+
+export const StyledSectionBold = styled((props) => <p {...props} />)`
+  font-family: Poppins;
+  font-size: 1rem;
+  line-height: 1.5rem;
+`;
+
+export const StyledSectionSpan = styled((props) => <p {...props} />)`
+  font-family: Poppins;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+`;
