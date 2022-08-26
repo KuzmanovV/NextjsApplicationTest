@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Image from "next/image";
 import { StyledContainer } from "../../sections/AgencySelection/elements";
 import { 
@@ -12,8 +13,9 @@ import {
 } from "./elements";
 
 export const Card = ({ innerTitle, innerParagrapg0, innerParagrapg1, innerParagrapg2, innerImage, ...props }) => {
+  
   return (
-  <StyledCardContainer {...props}>
+    <StyledCardContainer {...props}  >
     {/* <StyledIcon> */}
     <StyledImageContainer>
       <Image src={innerImage.src} alt={innerImage.alt} width={innerImage.width} height={innerImage.height} />
@@ -28,5 +30,5 @@ export const Card = ({ innerTitle, innerParagrapg0, innerParagrapg1, innerParagr
       </StyledSectionParagraph>
     </StyledCardTextContainer>
   </StyledCardContainer>
-)
-};
+   
+    )}

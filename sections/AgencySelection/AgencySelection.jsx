@@ -1,15 +1,21 @@
 import Image from "next/image";
+import { useState } from "react";
 
 import {
+  StyledDesktopContainer,
   StyledTextContainer,
-  StyledContainer,
   StyledTitle,
   StyledDescription,
   StyledCTAContainer,
   StyledImageContainer,
   StyledCard,
   StyledSubContainer,
+  StyledBGContainer,
+  StyledHoveredCard0,
+  StyledHoveredCard1,
+  StyledHoveredCard2,
 } from "./elements";
+
 
 const cardProps0 = {
   innerTitle: "Brief",
@@ -35,23 +41,54 @@ const cardProps2 = {
   innerImage: { src: "/img/icon2.png", alt: "iconImg", width: 120, height: 120 },
 };
 
-export const AgencySelection = ({ image, title, description, ...props }) => {
+export const AgencySelection = ({ image, imageBG, title, description, ...props }) => {
+  
+  const [isHovering0, setIsHovered0] = useState(false);
+  const [isHovering1, setIsHovered1] = useState(false);
+  const [isHovering2, setIsHovered2] = useState(false);
+  const onHoverIn0 = () => setIsHovered0(true);
+  const onHoverOut0 = () => setIsHovered0(false);
+  const onHoverIn1 = () => setIsHovered1(true);
+  const onHoverOut1 = () => setIsHovered1(false);
+  const onHoverIn2 = () => setIsHovered2(true);
+  const onHoverOut2 = () => setIsHovered2(false);
+
   return (
-  <StyledContainer {...props}>
+  <StyledDesktopContainer {...props}>
+      <StyledBGContainer>
+        <Image layout="fill" src={imageBG.src} alt={imageBG.alt}/>
+      </StyledBGContainer>
       <StyledTextContainer>
           <StyledTitle>{title}</StyledTitle>
           <StyledDescription>{description}</StyledDescription>
       </StyledTextContainer>
         <StyledSubContainer>
           <StyledImageContainer>
-          <Image layout="responsive" src={image.src} alt={image.alt} width={image.width} height={image.height} />
+          <Image layout="responsive" src={image.src} alt={image.alt} width={image.width} height={image.height}/>
           </StyledImageContainer>
           <StyledCTAContainer>
-            <StyledCard {...cardProps0} style={{ width: 510 }}></StyledCard>
-            <StyledCard {...cardProps1} style={{ width: 560 }}></StyledCard>
-            <StyledCard {...cardProps2}></StyledCard>
+            
+            {!isHovering0? (
+            <StyledCard {...cardProps0} style={{ width: 610 }} onMouseEnter={onHoverIn0}></StyledCard>
+            ) : (
+              <StyledHoveredCard0 {...cardProps0} style={{ width: 610 }} onMouseLeave={onHoverOut0}></StyledHoveredCard0>
+            )}
+            
+            {!isHovering1? (
+            <StyledCard {...cardProps1} style={{ width: 660 }} onMouseEnter={onHoverIn1}></StyledCard>
+            ) : (
+              <StyledHoveredCard1 {...cardProps1} style={{ width: 660 }} onMouseLeave={onHoverOut1}></StyledHoveredCard1>
+            )}
+
+            {!isHovering2? (
+            <StyledCard {...cardProps2} onMouseEnter={onHoverIn2}></StyledCard>
+            ) : (
+              <StyledHoveredCard1 {...cardProps2} onMouseLeave={onHoverOut2}></StyledHoveredCard1>
+            )}
+
           </StyledCTAContainer>
         </StyledSubContainer>
-  </StyledContainer>
+  </StyledDesktopContainer>
+
   );
 };

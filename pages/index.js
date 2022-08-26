@@ -9,10 +9,10 @@ const heroProps = {
 };
 
 const agencySelectionProps = {
-  image: { src: "/img/video.png", alt: "", width: 1000, height: 1680 },
+  image: { src: "/img/video.png", alt: "smileImg", width: 1000, height: 1680 },
+  imageBG: { src: "/img/background.png", alt: "backgroundImg" },
   title: "Managed agency selection",
   description: "Strengthen your onboarding process",
-  // ctaText: "Start",
 };
 
 export default function Home() {
