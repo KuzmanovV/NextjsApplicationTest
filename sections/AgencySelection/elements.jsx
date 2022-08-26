@@ -6,13 +6,14 @@ export const StyledDesktopContainer = styled(({ height, ...props }) => <SectionC
   @media (min-width: 1024px) {
     flex-direction: column;
     align-items: center;
-    margin-top: 4rem
+    margin: 4rem 6rem;
     display: flex;
     }
   @media (max-width: 1023px) {
     flex-direction: column;
     align-items: center;
     margin-top: 4rem
+    margin-bottom: 4rem;
     display: flex;
     }
     `

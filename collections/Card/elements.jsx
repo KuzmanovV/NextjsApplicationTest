@@ -7,11 +7,12 @@ background-color: #f9f9f9;
 display: flex;
 align-items: center;
 border-radius: 8px;
-margin: 0 0 0 5rem;
+margin: 0 0 0 3rem;
 `;
 
 export const StyledSectionParagraph = styled((props) => <SectionParagraph {...props} />)`
 margin:  0 2.5rem 0 0;
+padding-right: 10px;
 font-size: 20px;
 `;
 
